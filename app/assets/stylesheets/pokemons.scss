@@ -1,0 +1,52 @@
+// Place all the styles related to the Pokemons controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+img {
+  display: inline-block;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.pokedex {
+  display: flex;
+  font-size: 14px;
+}
+
+.pokelist li {
+  border-bottom: 1px solid #eee;
+  padding: 6px;
+}
+
+.pokelist {
+  width: 300px;
+}
+
+.pokelist li:first-child {
+  border-top:  1px solid #eee;
+}
+
+.pokelist img {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.pokelist span {
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.pokemon-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  letter-spacing: 2px;
+}
+
+.pokemon-detail h1, h2 {
+  font-size: 24px;
+  font-style: bold;
+}
