@@ -10,7 +10,7 @@ class PokemonForm extends React.Component{
         image_url: "",
         move1: "",
         move2: "",
-        poke_type: ""
+        poke_type: "bug"
       };
   }
 
@@ -19,7 +19,6 @@ class PokemonForm extends React.Component{
   }
 
   handleSubmit(e){
-    debugger;
     e.preventDefault();
     const moves = [this.state.move1, this.state.move2];
     const pokemon = {
@@ -33,9 +32,18 @@ class PokemonForm extends React.Component{
     this.props.createPokemon(pokemon);
   }
 
+  displayErrors() {
+    return (
+      <ul>
+        {this.props.errors.map ((el, i) => <li key={i}>{el}</li>)}
+      </ul>
+    );
+  }
+
   render(){
     return (
     <form>
+      {this.displayErrors()}
       <input type="text" placeholder="Name" onChange={ this.update("name")}></input>
       <input type="text" placeholder="Image Url" onChange={ this.update("image_url")}></input>
       <select onChange={ this.update("poke_type")}>

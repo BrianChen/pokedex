@@ -2,9 +2,10 @@ import React from 'react';
 import Item from '../items/item';
 
 const PokemonDetail = ({ pokemon, children }) => {
+  const klass = `${pokemon.poke_type} pokemon-detail`;
   if (pokemon.constructor === Object && Object.keys(pokemon).length > 0) {
     return (
-      <section className="pokemon-detail">
+      <section className={klass}>
         <figure> <img src={pokemon.image_url}></img> </figure>
         <h1>{pokemon.name}</h1>
         <ul>

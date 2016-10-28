@@ -21,6 +21,9 @@ body {
 
 .pokelist {
   width: 300px;
+  height: 840px;
+  overflow: scroll;
+  border-top: 1px solid #eee;
 }
 
 .pokelist li:first-child {
@@ -43,10 +46,55 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  letter-spacing: 2px;
+  font-size: 20px;
+}
+
+.pokemon-detail > div{
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .pokemon-detail h1, h2 {
-  font-size: 24px;
+  font-size: 30px;
   font-style: bold;
+  letter-spacing: 3px;
+  color: red;
+}
+
+header {
+  position: relative;
+}
+
+.header-nav {
+  position: absolute;
+  top: 67px;
+  padding-left: 223px;
+  font-size: 16px;
+  width: 100%;
+  font-style: bold;
+  border-bottom: 1px solid gray;
+}
+
+.header-nav ul {
+  padding-bottom: 10px;
+}
+
+.electric {
+  background-image: url('http://www.totalelectricaltraining.com/files/uploads/images/electricity.jpg');
+}
+
+.fire {
+  background-image: url('http://nationalfireescapeassociation.org/wp-content/uploads/2013/01/suppression.jpg');
+  background-size: cover;
+}
+
+.grass {
+  background-image: url('http://hdwallpaperia.com/wp-content/uploads/2014/01/Design-Green-Background-Wallpapers.jpg');
+  background-size: cover;
+}
+
+.ground {
+  background-image: url('https://www.colourbox.com/preview/2195502-a-high-resolution-dry-ground-texture.jpg');
+  background-size: cover;
 }

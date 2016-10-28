@@ -23,7 +23,7 @@ html {
 body {
 	font-family: sans-serif;
 	background: $black;
-	color: $grey;
+	color: white;
 	font-size: 12px;
 	height: 100%;
 	padding-right: 10px;
@@ -40,4 +40,8 @@ header {
 		height: 46px;
 		margin-right: -10px;
 	}
+}
+
+ul {
+	list-style: none;
 }

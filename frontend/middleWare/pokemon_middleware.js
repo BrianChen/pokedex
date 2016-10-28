@@ -5,14 +5,14 @@ import {
   receiveAllPokemon,
   receivePokemon,
   CREATE_POKEMON,
-  receiveNewPokemon} from '../actions/pokemon_actions';
-
+  receiveNewPokemon,
+  receivePokemonErrors} from '../actions/pokemon_actions';
+  import { hashHistory } from 'react-router';
 
 const PokemonMiddleware = ({ dispatch }) => next => action => {
   let success;
   switch(action.type) {
     case REQUEST_ALL_POKEMON:
-    debugger;
       success = response => dispatch(receiveAllPokemon(response));
       fetchAllPokemon(success);
       return next(action);
@@ -21,9 +21,15 @@ const PokemonMiddleware = ({ dispatch }) => next => action => {
       fetchPokemon(action.pokeId, success);
       return next(action);
     case CREATE_POKEMON:
-    debugger;
-      success = response => dispatch(receiveNewPokemon(response));
-      postPokemon(action.pokemon, success);
+      success = pokemon => {
+        dispatch(receiveNewPokemon(pokemon));
+        hashHistory.push(`/pokemon/${pokemon.id}`);
+      };
+      const errors = error => {
+        dispatch(receivePokemonErrors(error));
+      };
+
+      postPokemon(action.pokemon, success, errors);
       return next(action);
     default:
       return next(action);

@@ -6,4 +6,8 @@ const mapDispatchToProps = dispatch => ({
   createPokemon: pokemon => dispatch(createPokemon(pokemon))
 });
 
-export default connect(mapDispatchToProps)(PokemonForm);
+const mapStateToProps = state => ({
+  errors: state.errors
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(PokemonForm);
